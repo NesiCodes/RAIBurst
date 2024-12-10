@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "814437224776",
+    "project_id": "raiburst-f8c4e",
+    "storage_bucket": "raiburst-f8c4e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814437224776:android:23509f6df32379818e637d",
+        "android_client_info": {
+          "package_name": "com.example.raiburst"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk0jD1DTadWtqumY3j4Z_zpsojVGJLlJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
