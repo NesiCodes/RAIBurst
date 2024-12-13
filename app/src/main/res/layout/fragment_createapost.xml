@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <!-- First Horizontal Layout (taking 1/3 of the screen height) -->
+
+    <!-- Second Horizontal Layout (taking 1/3 of the screen height) -->
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Left Arrow Image (Clickable) -->
+        <ImageView
+            android:id="@+id/arrow_left"
+            android:layout_width="22dp"
+            android:layout_height="27dp"
+            android:clickable="true"
+            android:contentDescription="@string/arrow_left"
+            android:focusable="true"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="#FFFFFF" />
+
+        <!-- Text 'New Post' -->
+        <TextView
+            android:id="@+id/new_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="New Post"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:layout_below="@id/layout1">
+
+        <!-- Add child views to the second horizontal layout here -->
+        <!-- EditText for user to add post description -->
+        <EditText
+            android:id="@+id/description_edit_text"
+            android:layout_width="313dp"
+            android:layout_height="94dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_bar_background"
+            android:hint="Add a description:"
+            android:padding="8dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <!-- ImageView for adding image -->
+        <ImageView
+            android:id="@+id/add_image_button"
+            android:layout_width="wrap_content"
+            android:layout_height="109dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_addphoto"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+
+
+
+<LinearLayout
+android:id="@+id/layout3"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_weight="1"
+android:padding="16dp"
+android:layout_below="@id/layout2">
+    <!-- Button for adding a tag -->
+    <Button
+        android:id="@+id/add_tag_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#Add tag"
+        android:textColor="#FFFFFF"
+        android:backgroundcolor="#121212"
+        android:layout_marginEnd="16dp" /> <!-- Space between buttons -->
+
+    <!-- Button for adding stickers -->
+    <ImageButton
+        android:id="@+id/add_sticker_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_addsticker"
+        android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+</LinearLayout>
+
+
+</RelativeLayout>
