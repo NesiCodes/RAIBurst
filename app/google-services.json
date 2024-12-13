@@ -1,26 +1,37 @@
 {
   "project_info": {
-    "project_number": "814437224776",
-    "project_id": "raiburst-f8c4e",
-    "storage_bucket": "raiburst-f8c4e.firebasestorage.app"
+    "project_number": "215791962100",
+    "firebase_url": "https://loginregisterweb-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "loginregisterweb",
+    "storage_bucket": "loginregisterweb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:814437224776:android:23509f6df32379818e637d",
+        "mobilesdk_app_id": "1:215791962100:android:eaa1026d2b7436c9005ba1",
         "android_client_info": {
           "package_name": "com.example.raiburst"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "215791962100-f5pai4jjne0hf6nmkn7vogaj8ph34uv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyBk0jD1DTadWtqumY3j4Z_zpsojVGJLlJk"
+          "current_key": "AIzaSyAg7T576ua1Zua2Rg2Zbqewq52JWW1d13w"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215791962100-f5pai4jjne0hf6nmkn7vogaj8ph34uv5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
