@@ -1,0 +1,169 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212"
+    android:id="@+id/main"
+    tools:context=".MainActivity">
+
+    <!-- Logo ose Ikona -->
+    <ImageView
+        android:id="@+id/logo_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo"
+        />
+
+    <!-- Teksti Kryesor -->
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Welcome to RAIBurst"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Teksti Nën-Titull -->
+    <TextView
+        android:id="@+id/description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Where AI Meets Financial Freedom"
+        android:textColor="#AAAAAA"
+        android:textSize="16sp" />
+
+    <!-- Fusha e Email-it -->
+    <EditText
+        android:id="@+id/email_input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:hint="E-mail / Username"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#666666" />
+
+    <!-- Fusha e Fjalëkalimit -->
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Password"
+        android:padding="12dp"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#666666" />
+
+    <!-- Butoni 'Sign In' -->
+    <Button
+        android:id="@+id/sign_in_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#FFD700"
+        android:text="SIGN IN"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <!-- Teksti për "OR SIGN IN WITH" me linja gri -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center"
+        android:paddingTop="10dp">
+
+        <!-- Linja e para (majtas) -->
+
+        <!-- Teksti "OR SIGN IN WITH" -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="#B0B0B0" />
+
+        <TextView
+            android:id="@+id/or_sign_in_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text=" OR SIGN IN WITH"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <!-- Linja e dyte (djathtas) -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#B0B0B0" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <!-- Butoni për Google -->
+        <ImageButton
+            android:id="@+id/google_sign_in_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/phone"
+            android:contentDescription="Google Sign In"
+            android:background="@android:color/transparent" />
+
+        <!-- Butoni për Facebook -->
+        <ImageButton
+            android:id="@+id/facebook_sign_in_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/mail"
+            android:contentDescription="Facebook Sign In"
+            android:layout_marginStart="16dp"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <!-- Teksti për 'Sign Up' -->
+    <TextView
+        android:id="@+id/sign_up_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Didn't have an account? SIGN UP NOW"
+        android:textColor="#FFD700"
+        android:textSize="14sp"
+        />
+</LinearLayout>
