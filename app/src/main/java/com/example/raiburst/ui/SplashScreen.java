@@ -42,14 +42,5 @@ public class SplashScreen extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.pleaseWait);
 
-        // Ngarko animacionin
-        Animation blinkAnimation = AnimationUtils.loadAnimation(this, R.anim.blink);
-        textView.startAnimation(blinkAnimation);
-
-        textView.postDelayed(() -> {
-            Intent intent = new Intent(SplashScreen.this, LogInActivity.class);
-            startActivity(intent);
-            finish(); // Mbyll aktivitetin aktual
-        }, 1500); // 50
     }
 }

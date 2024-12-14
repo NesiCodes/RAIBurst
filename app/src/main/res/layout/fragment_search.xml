@@ -4,63 +4,92 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"
-    android:visibility="visible">
+    android:paddingTop="40dp"
+    android:background="#121212">
 
-    <!-- Top App Bar -->
 
-    <!-- Search Field -->
 
-    <!-- Empty View Placeholder -->
-
-    <TextView
-        android:id="@+id/empty_view"
-        android:layout_width="match_parent"
-        android:layout_height="451dp"
-        android:layout_below="@id/search_bar"
-        android:layout_marginTop="17dp"
-        android:gravity="center"
-        android:text="No notifications yet."
-        android:textColor="#888888"
-        android:textSize="16sp"
-        android:visibility="visible" />
-
-    <EditText
-        android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_margin="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/search_bar_background"
-        android:hint="Search"
-        android:paddingHorizontal="16dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#888888"
-        android:visibility="visible" />
-
-    <Button
-        android:id="@+id/search_button"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/ic_search" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <LinearLayout
+        android:id="@+id/layout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/black"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/nav_menu" />
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <!-- Left Arrow Image (Clickable) -->
+        <ImageView
+            android:id="@+id/arrow_left"
+            android:layout_width="22dp"
+            android:layout_height="27dp"
+            android:clickable="true"
+            android:contentDescription="@string/arrow_left"
+            android:focusable="true"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="#FFFFFF" />
+
+        <!-- Search Field -->
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="300dp"
+            android:layout_height="54dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/search_bar_background"
+            android:hint="Search"
+            android:paddingHorizontal="16dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="59dp"
+            android:layout_height="52dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/ic_search" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="97dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="427dp"
+            android:layout_below="@id/search_bar"
+            android:layout_marginTop="17dp"
+            android:gravity="center"
+            android:text="No notifications yet."
+            android:textColor="#888888"
+            android:textSize="16sp"
+            android:visibility="visible" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/nav_menu" />
+
+    </LinearLayout>
 
 </RelativeLayout>
-
-
