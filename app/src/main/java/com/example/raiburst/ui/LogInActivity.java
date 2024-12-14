@@ -17,8 +17,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.raiburst.R;
+import com.hbb20.CountryCodePicker;
 
 public class LogInActivity extends AppCompatActivity {
+
+    CountryCodePicker countryCodePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,7 @@ public class LogInActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Create an intent to move to SignUpActivity
                 Intent intent = new Intent(LogInActivity.this, SignUpActivity.class);
+                //Intent.putExtra("phone", countryCodePicker.getFullNumberWithPlus());
                 startActivity(intent); // Start the SignUpActivity
             }
         });

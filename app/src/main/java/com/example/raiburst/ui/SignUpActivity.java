@@ -36,7 +36,7 @@ public class SignUpActivity extends AppCompatActivity {
         nextButton = findViewById(R.id.next_button);
         countryCodePicker = findViewById(R.id.login_countrycode);
         phoneInput = findViewById(R.id.login_mobile_number);
-        phoneNumber = getIntent().getExtras().getString("phone");
+       // phoneNumber = getIntent().getExtras().getString("phone");
 
         countryCodePicker.registerCarrierNumberEditText(phoneInput);
 
