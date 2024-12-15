@@ -54,6 +54,9 @@ dependencies {
 
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth:22.1.2")
+    implementation("com.google.firebase:firebase-database:20.2.3")
+
 
     implementation ("com.hbb20:ccp:2.7.1")
 
@@ -62,3 +65,5 @@ dependencies {
 
 
 }
+
+apply( plugin = "com.google.gms.google-services")

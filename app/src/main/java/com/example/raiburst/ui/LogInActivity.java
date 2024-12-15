@@ -2,84 +2,74 @@ package com.example.raiburst.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.ForegroundColorSpan;
-import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.raiburst.MainActivity;
 import com.example.raiburst.R;
-import com.hbb20.CountryCodePicker;
+import com.example.raiburst.ui.SignUpActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LogInActivity extends AppCompatActivity {
 
-    CountryCodePicker countryCodePicker;
+    private EditText etEmail, etPassword;
+    private Button btnLogin;
+    private TextView tvSignup;
+
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_log_in);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        TextView welcomeText = findViewById(R.id.welcome_text);
-        String fullText = "Welcome to RAIBURST";
-        SpannableString spannable = new SpannableString(fullText);
-        ForegroundColorSpan yellowSpan = new ForegroundColorSpan(getResources().getColor(R.color.yellow));
-        spannable.setSpan(yellowSpan, 11, 13, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        welcomeText.setText(spannable);
-        TextView signUpText = findViewById(R.id.sign_up_text);
 
-           //Telksti i 2
-        String fullText2 = "Didn't have an account? SIGN UP NOW";
-        SpannableString spannable2 = new SpannableString(fullText2);
+        // Initialize Firebase Auth
+        auth = FirebaseAuth.getInstance();
 
-        int startIndex2 = fullText2.indexOf("SIGN UP NOW");
-        int endIndex2 = startIndex2 + "SIGN UP NOW".length();
+        // Initialize UI elements
+        etEmail = findViewById(R.id.email_input);
+        etPassword = findViewById(R.id.password_input);
+        btnLogin = findViewById(R.id.sign_in_button);
+        tvSignup = findViewById(R.id.sign_up_text);
 
-        int yellowColor = ContextCompat.getColor(this, R.color.yellow);
+        // Sign in button click listener
+        btnLogin.setOnClickListener(v -> {
+            String email = etEmail.getText().toString().trim();
+            String password = etPassword.getText().toString().trim();
 
-        spannable2.setSpan(new ForegroundColorSpan(yellowColor),
-                startIndex2, endIndex2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        signUpText.setText(spannable2);
-
-        signUpText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Create an intent to move to SignUpActivity
-                Intent intent = new Intent(LogInActivity.this, SignUpActivity.class);
-                //Intent.putExtra("phone", countryCodePicker.getFullNumberWithPlus());
-                startActivity(intent); // Start the SignUpActivity
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(LogInActivity.this, "Please enter email and password", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            // Firebase Authentication sign-in
+            auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = auth.getCurrentUser();
+                            if (user != null) {
+                                Toast.makeText(LogInActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+
+                                // Navigate to home screen
+                                Intent intent = new Intent(LogInActivity.this, MainActivity.class); // Replace with your home activity
+                                startActivity(intent);
+                                finish();
+                            }
+                        } else {
+                            Toast.makeText(LogInActivity.this, "Login failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
         });
 
-        Button signInButton = findViewById(R.id.sign_in_button);
-
-        // Navigate to MainActivity when the sign-in button is clicked
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LogInActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        // Signup link click listener
+        tvSignup.setOnClickListener(v -> {
+            Intent intent = new Intent(LogInActivity.this, SignUpActivity.class); // Replace with your signup activity
+            startActivity(intent);
         });
-
-
-
     }
 }

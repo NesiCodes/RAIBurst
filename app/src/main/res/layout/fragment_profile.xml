@@ -302,14 +302,15 @@
             android:contentDescription="Sign Out"
             app:tint="#FFFFFF" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Out"
-        android:textColor="#FFD700"
-        android:textStyle="bold"
-        android:layout_marginLeft="28dp"
-        android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/sign_out_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:text="Sign Out"
+            android:textColor="#FFD700"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
