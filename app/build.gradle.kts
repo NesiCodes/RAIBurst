@@ -56,4 +56,9 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
 
     implementation ("com.hbb20:ccp:2.7.1")
+
+    implementation("com.google.code.gson:gson:2.10.1") // For JSON parsing
+    implementation("com.squareup.okhttp3:okhttp:4.12.0") // For HTTP requests
+
+
 }

@@ -7,6 +7,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +17,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.raiburst.MainActivity;
 import com.example.raiburst.R;
 import com.hbb20.CountryCodePicker;
 
@@ -62,6 +64,18 @@ public class LogInActivity extends AppCompatActivity {
                 Intent intent = new Intent(LogInActivity.this, SignUpActivity.class);
                 //Intent.putExtra("phone", countryCodePicker.getFullNumberWithPlus());
                 startActivity(intent); // Start the SignUpActivity
+            }
+        });
+
+        Button signInButton = findViewById(R.id.sign_in_button);
+
+        // Navigate to MainActivity when the sign-in button is clicked
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LogInActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
