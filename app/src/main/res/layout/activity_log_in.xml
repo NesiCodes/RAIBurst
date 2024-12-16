@@ -10,12 +10,12 @@
     <!-- Logo ose Ikona -->
     <ImageView
         android:id="@+id/logo_icon"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/logo"
-        />
+        android:src="@drawable/raiffeisen_logo" />
+
 
     <!-- Teksti Kryesor -->
     <TextView

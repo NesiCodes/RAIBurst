@@ -4,7 +4,7 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="40dp"
+    android:paddingTop="5dp"
     android:background="#121212">
 
 
@@ -16,8 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_weight="1"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="6dp">
+        android:orientation="horizontal">
 
         <!-- Left Arrow Image (Clickable) -->
         <ImageView
