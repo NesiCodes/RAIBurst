@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 
 public class ChatGPTService {
     // OpenAI API Key
-    private static final String API_KEY = "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";
+    private static final String API_KEY = "KEY";
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
 
     private String previousIntent = "none";
