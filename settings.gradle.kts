@@ -8,14 +8,19 @@ pluginManagement {
             }
         }
         mavenCentral()
+        maven {
+            url = uri("https://sdk.developer.deepar.ai/maven-android-repository/releases/")
+        }
         gradlePluginPortal()
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        maven {
+            url = uri("https://sdk.developer.deepar.ai/maven-android-repository/releases/")
+        }
     }
 }
 

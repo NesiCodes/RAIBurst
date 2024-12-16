@@ -14,12 +14,6 @@
           </targets>
         </DialogSelection>
       </SelectionState>
-      <SelectionState runConfigName="LogInActivity">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="MainActivity">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
     </selectionStates>
   </component>
 </project>

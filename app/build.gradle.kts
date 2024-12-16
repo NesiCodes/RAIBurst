@@ -62,7 +62,11 @@ dependencies {
 
     implementation("com.google.code.gson:gson:2.10.1") // For JSON parsing
     implementation("com.squareup.okhttp3:okhttp:4.12.0") // For HTTP requests
-
+    implementation ("ai.deepar.ar:DeepAR:5.6.4")
+    implementation("androidx.camera:camera-core:1.2.3")
+    implementation("androidx.camera:camera-camera2:1.2.3")
+    implementation("androidx.camera:camera-lifecycle:1.2.3")
+    implementation("androidx.camera:camera-view:1.2.3")
 
 }
 

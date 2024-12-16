@@ -6,10 +6,10 @@
     app:startDestination="@+id/navigation_home">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.raiburst.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_feed"
+        android:name="com.example.raiburst.ui.feed.FeedFragment"
+        android:label="Feed"
+        tools:layout="@layout/fragment_feed" />
 
     <fragment
         android:id="@+id/nav_menus"
@@ -26,10 +26,10 @@
 
 
     <fragment
-        android:id="@+id/nav_analytics"
-        android:name="com.example.raiburst.ui.notifications.NotificationsFragment"
-        android:label="Analytics"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_home"
+        android:name="com.example.raiburst.ui.home.HomeFragment"
+        android:label="Chat with AI"
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_profile"

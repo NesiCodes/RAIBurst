@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/nav_feed"
         android:icon="@drawable/ic_home"
-        android:title="Home"
+        android:title="Feed"
         app:showAsAction="ifRoom" />
 
     <!-- Notifications -->
     <item
         android:id="@+id/nav_menus"
         android:icon="@drawable/ic_menus"
-        android:title="Menus"
+        android:title="Dashboard"
         app:showAsAction="ifRoom" />
 
     <!-- Search -->
@@ -24,9 +24,9 @@
 
     <!-- Analytics -->
     <item
-        android:id="@+id/nav_analytics"
-        android:icon="@drawable/ic_analytics"
-        android:title="Analytics"
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_chatbot"
+        android:title="Chat with AI"
         app:showAsAction="ifRoom" />
 
     <!-- Profile -->
