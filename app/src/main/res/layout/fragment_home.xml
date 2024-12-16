@@ -3,7 +3,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:padding="16dp"
+    android:background="#121212">
+
+    <!-- Central Image and Text -->
+    <FrameLayout
+        android:id="@+id/centerFrame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Robot Image -->
+
+        <!-- Central Text -->
+
+        <ImageView
+            android:id="@+id/robotImage"
+            android:layout_width="74dp"
+            android:layout_height="81dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="Robot Image"
+            android:src="@mipmap/robot_image_foreground" />
+
+        <TextView
+            android:id="@+id/centerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="120dp"
+            android:gravity="center"
+            android:text="What can I help you with?"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </FrameLayout>
 
     <!-- Chat container for messages -->
     <ScrollView
@@ -32,12 +66,19 @@
             android:hint="Type your message"
             android:padding="8dp"
             android:layout_marginBottom="65dp"
-            android:background="@android:drawable/editbox_background" />
+            android:background="#1E1E1E"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#757575"
+            android:layout_marginRight="8dp" />
 
         <Button
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Send" />
+            android:text="Send"
+            android:backgroundTint="#1E1E1E"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:elevation="4dp" />
     </LinearLayout>
 </LinearLayout>

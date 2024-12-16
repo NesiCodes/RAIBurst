@@ -125,6 +125,17 @@
     </LinearLayout>
 
     <EditText
+        android:id="@+id/user_pin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="PIN"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#666666"
+        android:layout_marginTop="16dp" />
+
+    <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -135,6 +146,8 @@
         android:textColorHint="#666666"
         android:inputType="textPassword"
         android:layout_marginTop="16dp" />
+
+
 
     <Button
         android:layout_width="match_parent"

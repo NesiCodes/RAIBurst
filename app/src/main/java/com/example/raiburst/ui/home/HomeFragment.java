@@ -1,6 +1,5 @@
 package com.example.raiburst.ui.home;
 
-import static androidx.fragment.app.FragmentManager.TAG;
 
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
@@ -12,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -104,6 +104,14 @@ public class HomeFragment extends Fragment {
     }
 
     private void addMessageToChat(String message, boolean isUser) {
+        // Find the FrameLayout by ID
+        FrameLayout centerFrame = binding.centerFrame;
+
+        // Remove the FrameLayout from its parent
+        if (centerFrame != null) {
+            centerFrame.setVisibility(View.GONE);
+        }
+
         // Create a TextView for the message
         TextView textView = new TextView(getContext());
         textView.setText(message);
@@ -120,10 +128,10 @@ public class HomeFragment extends Fragment {
         // Set alignment and background
         if (isUser) {
             layoutParams.gravity = Gravity.END; // Right-aligned
-            textView.setBackground(createRoundedBackground(Color.parseColor("#0078D7"))); // Blue background
+            textView.setBackground(createRoundedBackground(Color.parseColor("#1E90FF"))); // Lighter blue background
         } else {
             layoutParams.gravity = Gravity.START; // Left-aligned
-            textView.setBackground(createRoundedBackground(Color.parseColor("#606060"))); // Gray background
+            textView.setBackground(createRoundedBackground(Color.parseColor("#444444"))); // Gray background
         }
 
         layoutParams.setMargins(10, 10, 10, 10);

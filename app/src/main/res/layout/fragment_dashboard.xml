@@ -1,257 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_layout"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="40dp"
-    android:background="#121212">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#131313">
 
-    <RelativeLayout
-        android:id="@+id/layout0"
+    <!-- Search Bar -->
+    <EditText
+        android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="1dp">
+        android:hint="Search transactions..."
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#757575"
+        android:background="#1E1E1E"
+        android:layout_marginBottom="16dp"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawablePadding="8dp" />
 
-        <!-- Search Field -->
-        <EditText
-            android:id="@+id/search_bar"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:background="@drawable/search_bar_background"
-            android:hint="Search"
-            android:paddingHorizontal="16dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#888888"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/filters_button"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/ic_filters_button"
-            app:tint="#FFFFFF" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/transactions_layout"
-        android:layout_below="@id/layout0"
+    <!-- Balance Display -->
+    <TextView
+        android:id="@+id/balance_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:gravity="center_vertical">
+        android:background="#1E1E1E"
+        android:padding="16dp"
+        android:gravity="center"
+        android:text="Balance: $5000"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="28dp"
-            android:text="Transactions"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Sort by Latest"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:layout_alignParentEnd="true"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/layout1"
-        android:layout_below="@id/transactions_layout"
+    <!-- Transactions List -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="6dp"
-        android:gravity="center_vertical">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_bar"
-            android:contentDescription="Mon Cheri"
-            app:tint="#FFFFFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/transactions_list"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="28dp"
-            android:text="Mon Cheri"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF" />
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Payment"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:layout_alignParentEnd="true"
-            />
-    </RelativeLayout>
+            <!-- Example Transaction Record -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="#1E1E1E">
 
-    <!-- Repeat Menu Items -->
-    <RelativeLayout
-        android:id="@+id/layout2"
-        android:layout_below="@id/layout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="6dp"
-        android:gravity="center_vertical">
+                <!-- Icon -->
+                <ImageView
+                    android:id="@+id/transaction_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@android:drawable/ic_menu_info_details"
+                    android:contentDescription="Transaction Icon"
+                    app:tint="#FFFFFF"
+                    android:layout_marginEnd="8dp" />
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_coffe"
-            android:contentDescription="Mulliri"
-            app:tint="#FFFFFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="28dp"
-            android:text="Mulliri"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Payment"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:layout_alignParentEnd="true"
-            />
-    </RelativeLayout>
-
-    <!-- Repeat Menu Items -->
-    <RelativeLayout
-        android:id="@+id/layout3"
-        android:layout_below="@id/layout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="6dp"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_profile"
-            android:contentDescription="Stelio Papa"
-            app:tint="#FFFFFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="28dp"
-            android:text="Stelio Papa"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Payment"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:layout_alignParentEnd="true"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/layout4"
-        android:layout_below="@id/layout3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="6dp"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_coffe"
-            android:contentDescription="Mulliri"
-            app:tint="#FFFFFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="28dp"
-            android:text="Mulliri"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Payment"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:layout_alignParentEnd="true"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/layout5"
-        android:layout_below="@id/layout4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="6dp"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_coffe"
-            android:contentDescription="Cafe Europa"
-            app:tint="#FFFFFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="28dp"
-            android:text="Cafe Europa"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Payment"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:layout_alignParentEnd="true"
-            />
-    </RelativeLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/black"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/nav_menu" />
-</RelativeLayout>
+                <!-- Transaction Text -->
+                <EditText
+                    android:id="@+id/transaction_record_example"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Transaction details"
+                    android:padding="12dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#757575"
+                    android:background="#1E1E1E"
+                    android:enabled="false" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

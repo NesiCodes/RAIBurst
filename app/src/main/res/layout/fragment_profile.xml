@@ -4,56 +4,64 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="5dp"
+    android:paddingTop="40dp"
     android:background="#121212">
 
-        <!-- Back Button -->
+    <!-- Back Button -->
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:paddingBottom="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Back Button"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Back"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Profile Section -->
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_below="@id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="Profile Picture"
+            android:background="@drawable/search_bar_background"
+            android:layout_gravity="center" />
+
         <LinearLayout
-            android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="start"
-            android:paddingBottom="16dp">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_arrow_back"
-                android:contentDescription="Back Button"
-                app:tint="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Back"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-
-        <!-- Profile Section -->
-        <LinearLayout
-            android:id="@+id/layout2"
-            android:layout_below="@id/layout1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:paddingBottom="12dp">
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_profile"
-                android:contentDescription="Profile Picture"
-                android:background="@drawable/search_bar_background"
-                android:layout_gravity="center" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Aldo Daci"
+                android:text="John"
+                android:id="@+id/first_user_name"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
@@ -62,62 +70,69 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="aldodaci"
-                android:textSize="14sp"
-                android:textColor="#A9A9A9" />
+                android:text="Doe"
+                android:id="@+id/first_last_name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="8dp" />
+
         </LinearLayout>
 
-        <!-- Menu Options -->
-        <LinearLayout
-            android:id="@+id/layout3"
-            android:layout_below="@id/layout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="6dp"
-                android:gravity="center_vertical">
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_profile"
-                    android:contentDescription="My Information"
-                    app:tint="#FFFFFF" />
+    </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="My Information"
-                    android:textSize="16sp"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
+    <!-- Menu Options -->
+    <LinearLayout
+        android:id="@+id/layout3"
+        android:layout_below="@id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:gravity="center_vertical">
 
-            <!-- Repeat Menu Items -->
-            <LinearLayout
-                android:id="@+id/layout4"
-                android:layout_below="@id/layout3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="6dp"
-                android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="My Information"
+            app:tint="#FFFFFF" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_message"
-                    android:contentDescription="Messages"
-                    app:tint="#FFFFFF" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="My Information"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="Messages"
-                    android:textSize="16sp"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
+    <!-- Repeat Menu Items -->
+    <LinearLayout
+        android:id="@+id/layout4"
+        android:layout_below="@id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_message"
+            android:contentDescription="Messages"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Messages"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 
     <!-- Repeat Menu Items -->
     <LinearLayout
@@ -173,22 +188,22 @@
 
     <LinearLayout
         android:id="@+id/layout7"
-    android:layout_below="@id/layout6"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="6dp"
-    android:gravity="center_vertical">
-
-    <TextView
+        android:layout_below="@id/layout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Settings"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"/>
+        android:orientation="vertical"
+        android:padding="6dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -213,29 +228,29 @@
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
-    <!-- Toggle Items -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="6dp"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- Toggle Items -->
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Silent Mode"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:orientation="horizontal"
+            android:padding="6dp"
+            android:gravity="center_vertical">
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:layout_alignParentEnd="true"
-            android:thumbTint="#FFD700"
-            android:trackTint="#FFFFFF" />
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Silent Mode"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:layout_alignParentEnd="true"
+                android:thumbTint="#FFD700"
+                android:trackTint="#FFFFFF" />
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -312,14 +327,14 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Privacy &amp; Policy"
-        android:layout_alignParentEnd="true"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Privacy &amp; Policy"
+            android:layout_alignParentEnd="true"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </RelativeLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -333,4 +348,4 @@
         app:menu="@menu/bottom_nav_menu" />
 
 
-    </RelativeLayout>
+</RelativeLayout>
